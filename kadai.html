@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>kadai</title>
+    </head>
+    <body>
+        <p>
+            <button onclick="start1();">Start</button>
+            <button onclick="lap1();">lap</button>
+            <button onclick="finish1();">Finish</button>
+        </p>     
+        <p id="time1">経過時間は...</p>
+        <script>
+            const lapList = document.getElementById('lap'),
+                time1 = document.getElementById("time1");
+                
+            let startTime;
+            function start1(){
+                const now = new Date();
+                startTime = now.getTime();
+                //time1.innerHTML=startTime;
+            }
+            
+            function finish1(){
+                const now = new Date();
+                finishTime = now.getTime();
+                time1.innerHTML="経過時間は" + (finishTime-startTime)/1000 + "秒";
+            }
+
+            
+            function lap() {
+                i++;
+                const li = document.createElement('li');
+                lapList.appendChild(li);
+                const now = new Date();
+                finishTime = now.getTime();
+                li.innerHTML = 'LAP' + i + (finishTime-startTime)/1000;
+            }
+
+
+
+
+
+           
+        </script>
+    </body>
+</html>
